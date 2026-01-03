@@ -53,11 +53,11 @@ bindsym Control+$amod+t exec $wm_setting_app_terminal
 # Start file manager
 bindsym $mod+e exec $wm_setting_app_files
 
-# Start program launcher (Changed to $mod+r)
+# Start program launcher
 bindsym $mod+r exec $wm_setting_app_launcher
 
 # Screenshot
-bindsym Print exec "flameshot gui"
+bindsym Print exec "flameshot gui" # change to whatever you use
 
 ### Workspaces ###
 set $ws1  "    1    "
@@ -107,8 +107,7 @@ bindsym $mod+$wm_setting_key_left        focus left
 bindsym $mod+$wm_setting_key_down        focus down
 bindsym $mod+$wm_setting_key_up          focus up
 bindsym $mod+$wm_setting_key_right       focus right
-# Switch between the last two focused windows
-bindsym Mod1+Tab focus next
+bindsym $amod+Tab focus next
 # Close an app
 bindsym $amod+F4 kill
 
@@ -131,10 +130,9 @@ mode "resize" {
 
     bindsym Return mode "default"
     bindsym Escape mode "default"
-    # Note: Removed $mod+r here to avoid conflict with launcher
 }
 
-# Enter Resize Mode (Changed to $mod+Shift+r to free up $mod+r for dmenu)
+# Enter Resize Mode
 bindsym $mod+$smod+r mode "resize"
 
 ### Gaps ###
@@ -188,4 +186,4 @@ bindsym $mod+Shift+c reload
 bindsym $mod+Shift+s restart
 
 # Exit i3
-bindsym $mod+$smod+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+bindsym $mod+$smod+e exec "i3-nagbar -t warning -m 'Do you really want to exit i3?' -B 'Yes, exit i3' 'i3-msg exit'"
