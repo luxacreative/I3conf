@@ -118,10 +118,10 @@ bindsym $mod+$smod+$wm_setting_key_right move right
 
 # Resize window mode
 mode "resize" {
-    bindsym $wm_setting_key_right  resize shrink width 10 px or 10 ppt
-    bindsym $wm_setting_key_down  resize grow height 10 px or 10 ppt
-    bindsym $wm_setting_key_up    resize shrink height 10 px or 10 ppt
-    bindsym $wm_setting_key_left resize grow width 10 px or 10 ppt
+    bindsym $wm_setting_key_left  resize shrink width 10 px or 10 ppt
+    bindsym $wm_setting_key_up  resize grow height 10 px or 10 ppt
+    bindsym $wm_setting_key_down    resize shrink height 10 px or 10 ppt
+    bindsym $wm_setting_key_right resize grow width 10 px or 10 ppt
     
     bindsym $smod+$wm_setting_key_left  gaps horizontal minus 5
     bindsym $smod+$wm_setting_key_down  gaps horizontal plus 5
