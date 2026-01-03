@@ -4,7 +4,6 @@ set $amod		Mod1
 set $smod               Shift
 set $wm_setting_font    pango:Source Sans Pro, Semibold 11
 
-# Gaps reduced to 5
 set $wm_setting_gap_width     5
 set $wm_setting_gap_heigth    5
 
@@ -14,10 +13,11 @@ set $wm_setting_key_down      Down
 set $wm_setting_key_up        Up
 set $wm_setting_key_right     Right
 
-# Application Variables
+### Application Variables ###
 set $wm_setting_app_terminal  alacritty
-set $wm_setting_app_launcher  i3-dmenu-desktop # you can change this to dmenu_run
+set $wm_setting_app_launcher  i3-dmenu-desktop
 set $wm_setting_app_files     thunar
+#set $wm_setting_app_files     pcmanfm
 
 set $wm_color_border_active_bg        #81A1C1
 set $wm_color_border_active_fg        #3B4252
@@ -108,8 +108,8 @@ bindsym $mod+$wm_setting_key_down        focus down
 bindsym $mod+$wm_setting_key_up          focus up
 bindsym $mod+$wm_setting_key_right       focus right
 bindsym $amod+Tab focus next
-# Close an app
 bindsym $amod+F4 kill
+#bindsym $mod+q kill
 
 bindsym $mod+$smod+$wm_setting_key_left  move left
 bindsym $mod+$smod+$wm_setting_key_down  move down
@@ -118,11 +118,11 @@ bindsym $mod+$smod+$wm_setting_key_right move right
 
 # Resize window mode
 mode "resize" {
-    bindsym $wm_setting_key_left  resize shrink width 10 px or 10 ppt
+    bindsym $wm_setting_key_right  resize shrink width 10 px or 10 ppt
     bindsym $wm_setting_key_down  resize grow height 10 px or 10 ppt
     bindsym $wm_setting_key_up    resize shrink height 10 px or 10 ppt
-    bindsym $wm_setting_key_right resize grow width 10 px or 10 ppt
-
+    bindsym $wm_setting_key_left resize grow width 10 px or 10 ppt
+    
     bindsym $smod+$wm_setting_key_left  gaps horizontal minus 5
     bindsym $smod+$wm_setting_key_down  gaps horizontal plus 5
     bindsym $smod+$wm_setting_key_up    gaps vertical minus 5
@@ -186,4 +186,4 @@ bindsym $mod+Shift+c reload
 bindsym $mod+Shift+s restart
 
 # Exit i3
-bindsym $mod+$smod+e exec "i3-nagbar -t warning -m 'Do you really want to exit i3?' -B 'Yes, exit i3' 'i3-msg exit'"
+bindsym $mod+$smod+e exec "i3-nagbar -t warning -m 'Do you really want to exit i3?' -B 'Yes' 'i3-msg exit'"
