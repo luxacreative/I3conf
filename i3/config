@@ -16,7 +16,7 @@ set $wm_setting_key_right     Right
 
 # Application Variables
 set $wm_setting_app_terminal  alacritty
-set $wm_setting_app_launcher  i3-dmenu-desktop
+set $wm_setting_app_launcher  i3-dmenu-desktop # you can change this to dmenu_run
 set $wm_setting_app_files     thunar
 
 set $wm_color_border_active_bg        #81A1C1
