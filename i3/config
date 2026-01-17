@@ -1,6 +1,6 @@
 ### Variables for settings ###
 set $mod                Mod4
-set $amod		Mod1
+set $amod               Mod1
 set $smod               Shift
 set $wm_setting_font    pango:Source Sans Pro, Semibold 11
 
@@ -14,9 +14,10 @@ set $wm_setting_key_up        Up
 set $wm_setting_key_right     Right
 
 ### Application Variables ###
-set $wm_setting_app_terminal  alacritty
-set $wm_setting_app_launcher  i3-dmenu-desktop
-set $wm_setting_app_files     thunar
+
+set $wm_setting_app_terminal  kitty
+set $wm_setting_app_launcher  rofi -show drun
+set $wm_setting_app_files     nemo
 #set $wm_setting_app_files     pcmanfm
 
 set $wm_color_border_active_bg        #81A1C1
@@ -48,16 +49,16 @@ set $bar_color_workspace_urgent_fg   #2E3440
 
 ### Applications ###
 # Start terminal
-bindsym Control+$amod+t exec $wm_setting_app_terminal
+bindsym $Mod+Q exec $wm_setting_app_terminal
 
 # Start file manager
 bindsym $mod+e exec $wm_setting_app_files
 
 # Start program launcher
-bindsym $mod+r exec $wm_setting_app_launcher
+bindsym $amod+space exec $wm_setting_app_launcher
 
 # Screenshot
-bindsym Print exec "flameshot gui" # change to whatever you use
+#bindsym Print exec "flameshot" # change to whatever you use
 
 ### Workspaces ###
 set $ws1  "    1    "
@@ -114,7 +115,7 @@ bindsym $mod+$wm_setting_key_up          focus up
 bindsym $mod+$wm_setting_key_right       focus right
 bindsym $amod+Tab focus next
 bindsym $amod+F4 kill
-#bindsym $mod+q kill
+
 
 bindsym $mod+$smod+$wm_setting_key_left  move left
 bindsym $mod+$smod+$wm_setting_key_down  move down
@@ -167,6 +168,7 @@ bar {
     status_command   $bar_setting_statusCommand
     tray_output      $bar_setting_trayoutput
 
+
     colors {
         background   $bar_color_background
         statusline   $bar_color_statusline
@@ -176,7 +178,7 @@ bar {
         active_workspace   $bar_color_workspace_active_bg   $bar_color_workspace_active_bg   $bar_color_workspace_active_fg
         inactive_workspace $bar_color_workspace_inactive_bg $bar_color_workspace_inactive_bg $bar_color_workspace_inactive_fg
         urgent_workspace   $bar_color_workspace_urgent_bg   $bar_color_workspace_urgent_bg   $bar_color_workspace_urgent_fg
-    }
+    }    
 }
 
 ### Miscellaneous settings ###
@@ -192,3 +194,5 @@ bindsym $mod+Shift+s restart
 
 # Exit i3
 bindsym $mod+$smod+e exec "i3-nagbar -t warning -m 'Do you really want to exit i3?' -B 'Yes' 'i3-msg exit'"
+
+
